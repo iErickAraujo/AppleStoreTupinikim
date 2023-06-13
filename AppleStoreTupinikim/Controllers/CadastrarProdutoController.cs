@@ -49,9 +49,11 @@ namespace AppleStoreTupinikim.Controllers
             //Cria no banco uma lista com o nome contatos+id gerado+produto com base na classe modelo
             SetResponse response = cliente.Set("Produtos/" + idGerador, oProduto);
             //se esta tudo ok retorna a lista
+            //se esta tudo ok retorna atualiza o produto
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                return View();
+                //retorna para a view lista de produtos
+                return RedirectToAction("ListaDeProdutos", "ListaDeProdutos");
             }
             else { return View(); }
 

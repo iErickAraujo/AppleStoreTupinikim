@@ -41,15 +41,15 @@ namespace AppleStoreTupinikim.Controllers
         //    return View();
         //}
 
-        public IActionResult Editar()
-        {
-            return View();
-        }
-        [HttpDelete]
-        public IActionResult Excluir()
-        {
-            return View();
-        }
+        //public IActionResult Editar()
+        //{
+        //    return View();
+        //}
+        //[HttpDelete]
+        //public IActionResult Excluir()
+        //{
+        //    return View();
+        //}
         //Set do produto no banco
         //[HttpPost]
         //public IActionResult Criar(Produtos oProduto)

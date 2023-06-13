@@ -58,7 +58,7 @@ namespace AppleStoreTupinikim.Controllers
             //Update//passa oProduto para ser atualizado
             //dessa forma estamos dizendo que o idproduto vai atualizar seus dados
             FirebaseResponse response = cliente.Update("Produtos/" + idproduto, oProduto);
-            //se esta tudo ok retorna atualiza o produto
+            //se esta tudo ok retorna atualiza o produto e retorna para a view lista de produtos
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 //retorna para a view lista de produtos
