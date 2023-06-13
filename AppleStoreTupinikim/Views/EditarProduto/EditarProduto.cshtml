@@ -7,30 +7,38 @@
     ViewData["Title"] = "Editar Produto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="text-center">
-    <h1 class="display-4">Editar Produto</h1>
-</div>
-@*passa para o url action nome do metodo criado e nome do controller*@
-<form action="@Url.Action("EditarProduto","EditarProduto")" method="post">
-    @*Oculta o id produto ja que não queremos que ele apareça na view*@
-    
-    <input type="hidden" name="IdProduto" value="@Html.DisplayTextFor(m=>m.IdProduto)" />
-    <div class="mb-3">
-        <label for="exampletext" class="form-label">Nome Do Produto</label>
-        <input type="text" class="form-control" name="Nome" value="@Html.DisplayTextFor(m=>m.Nome)" required />
-        <div id="text" class="form-text"></div>
-    </div>
-    <label for="exampletext" class="form-label">Valor do Produto</label>
-    <div class="input-group mb-3">
-        <span class="input-group-text">R$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Valor" value="@Html.DisplayTextFor(m=>m.Valor)" required/>
-        <span class="input-group-text">.00</span>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputnumber" class="form-label">Quantidade em Estoque</label>
-        <input type="number" class="form-control" name="Estoque" value="@Html.DisplayTextFor(m=>m.Estoque)" required />
-    </div>
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 border rounded-3 p-3">
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
-<a class="btn btn-danger" href="@Url.Action("ListaDeProdutos","ListaDeProdutos")">Voltar</a>
-</form>
+            <div class="text-center">
+                <h1 class="display-4">Editar Produto</h1>
+            </div>
+            @*passa para o url action nome do metodo criado e nome do controller*@
+            <form action="@Url.Action("EditarProduto","EditarProduto")" method="post">
+                @*Oculta o id produto ja que não queremos que ele apareça na view*@
+
+                <input type="hidden" name="IdProduto" value="@Html.DisplayTextFor(m=>m.IdProduto)" />
+                <div class="mb-3">
+                    <label for="exampletext" class="form-label">Nome Do Produto</label>
+                    <input type="text" class="form-control" name="Nome" value="@Html.DisplayTextFor(m=>m.Nome)" required />
+                    <div id="text" class="form-text"></div>
+                </div>
+                <label for="exampletext" class="form-label">Valor do Produto</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">R$</span>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Valor" value="@Html.DisplayTextFor(m=>m.Valor)" required />
+                    <span class="input-group-text">.00</span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputnumber" class="form-label">Quantidade em Estoque</label>
+                    <input type="number" class="form-control" name="Estoque" value="@Html.DisplayTextFor(m=>m.Estoque)" required />
+                </div>
+
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <a class="btn btn-danger" href="@Url.Action("ListaDeProdutos","ListaDeProdutos")">Voltar</a>
+            </form>
+
+        </div>
+    </div>
+</div>

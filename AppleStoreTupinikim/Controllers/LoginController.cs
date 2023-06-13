@@ -22,6 +22,7 @@ namespace AppleStoreTupinikim.Controllers
         {
             return View();
         }
+        //login, validações e mensagens de erro
         [HttpPost]
         public IActionResult Entrar(Cliente cliente)
         {
@@ -29,15 +30,31 @@ namespace AppleStoreTupinikim.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index","Home");
+                    //verifica o login se for correto redireciona para home
+                    if (cliente.Login == "admin" && cliente.Senha == "admin")
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        //se não mostra esta mensagem de erro
+                        TempData["MensagemErro"] = "Usuário e/ou senha inválidos. Por favor, tente novamente.";
+                    }
                 }
-                return View("Index");
+                else
+                {
+                    //se os campos estiverem vazios ou se somente um for preenchido mostra esta mensagem de erro
+                    TempData["MensagemErro"] = "Por favor, verifique se os campos do formulário estão preenchidos corretamente.";
+                }
+
+                return RedirectToAction("Login");
             }
-            catch (Exception error)
+            catch (Exception erro)
             {
-                TempData["Message error"] = $"Não conseguimos realizar seu login tente novamente{error.Message}";
-                return RedirectToAction("Index");
+                TempData["MensagemErro"] = $"Não foi possível realizar o login. Detalhes do erro: {erro.Message}";
+                return RedirectToAction("Login");
             }
         }
+
     }
 }

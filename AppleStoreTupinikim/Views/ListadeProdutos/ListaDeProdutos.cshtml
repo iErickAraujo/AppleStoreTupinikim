@@ -1,55 +1,53 @@
 ﻿@model IEnumerable<AppleStoreTupinikim.Models.Produtos>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-   
 *@
 @{
     ViewData["Title"] = "Lista De Produtos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="text-center">
-
+<div class="text-center mt-5">
     <h1 class="display-4">Lista De Produtos</h1>
     <div class="panel-body">
         @* dentro do url action nome do metodo e do controlador*@
-        <a class="btn btn-success" href="@Url.Action("CadastrarProduto","CadastrarProduto")">Cadastrar Produto</a>
+        <a class="btn btn-success" href="@Url.Action("CadastrarProduto","CadastrarProduto")">Cadastrar</a>
         <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Voltar</a>
         <br />
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                @*<th scope="col" type="hidden">#IdProduto</th>*@
-                <th scope="col">Nome Produto</th>
-                <th scope="col">Valor (R$)</th>
-                <th scope="col">Em estoque</th>
-                @*<th scope="col" style="width:150px">Ações</th>*@
-                <th scope="col">Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-               <tr>
-                    @*<td type="hidden">@item.IdProduto</td>*@
-                    <td>@item.Nome</td>
-                    <td>@item.Valor</td>
-                    <td>@item.Estoque</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <a class="btn btn-warning btn-sm me-3" href="@Url.Action("EditarProduto","EditarProduto",new{idproduto=item.IdProduto})">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="@Url.Action("DeletarProduto","DeletarProduto",new{idproduto=item.IdProduto})">Excluir</a>
-                        </div>
-                    </td>
-               </tr>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    @*<th scope="col" type="hidden">#IdProduto</th>*@
+                    <th scope="col">Nome</th>
+                    <th scope="col">Valor (R$)</th>
+                    <th scope="col">Em estoque</th>
+                    @*<th scope="col" style="width:150px">Ações</th>*@
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @*<td type="hidden">@item.IdProduto</td>*@
+                        <td>@item.Nome</td>
+                        <td>@item.Valor</td>
+                        <td>@item.Estoque</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <a class="btn btn-warning btn-sm me-3" href="@Url.Action("EditarProduto","EditarProduto",new{idproduto=item.IdProduto})">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="@Url.Action("DeletarProduto","DeletarProduto",new{idproduto=item.IdProduto})">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
 
-@*                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                    <button type="button" class="btn btn-warning">Editar</button>
+                    @*<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger">Excluir</button>
+                <button type="button" class="btn btn-warning">Editar</button>
                 </div>*@
-            }
-        </tbody>
-    </table>
-
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -2,23 +2,31 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Cadastrar";
+    ViewData["Title"] = "Cadastrar Cliente";
     Layout = "~/Views/Shared/_LayoutDeslogado.cshtml";
 }
-<div class="text-center">
-    <h1 class="display-4">Cadastrar</h1>
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 border rounded-3 p-3">
+
+            <div class="text-center">
+                <h1 class="display-4">Cadastrar</h1>
+            </div>
+            @*passa para o url action nome do metodo criado e nome do controller*@
+            <form action="@Url.Action("CadastrarCliente","CadastrarCliente")" method="post">
+                <div class="mb-3">
+                    <label for="exampletext" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="Nome" required>
+                    <div id="text" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputpassword" class="form-label">Senha</label>
+                    <input type="password" class="form-control" name="Senha" required>
+                </div>
+                <a class="btn btn-primary" asp-controller="Login" asp-action="Login">Cadastrar</a>
+                <a class="btn btn-danger" asp-controller="Login" asp-action="Login">Voltar</a>
+            </form>
+
+        </div>
+    </div>
 </div>
-@*passa para o url action nome do metodo criado e nome do controller*@
-<form action="@Url.Action("CadastrarCliente","CadastrarCliente")" method="post">
-    <div class="mb-3">
-        <label for="exampletext" class="form-label">Nome</label>
-        <input type="text" class="form-control" name="Nome" required>
-        <div id="text" class="form-text"></div>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputpassword" class="form-label">Senha</label>
-        <input type="password" class="form-control" name="Senha" required>
-    </div>
-    <a class="btn btn-primary" asp-controller="Login" asp-action="Login">Cadastrar</a>
-    <a class="btn btn-danger" asp-controller="Login" asp-action="Login">Voltar</a>
-</form>

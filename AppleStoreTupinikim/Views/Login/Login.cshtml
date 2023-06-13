@@ -1,27 +1,46 @@
-﻿@*
+﻿@model AppleStoreTupinikim.Models.Cliente
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     ViewData["Title"] = "Login";
     Layout = "_LayoutDeslogado";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="text-center">
-    <h1 class="display-4">Login</h1>
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+<div class="container-fluid m-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 border rounded-3 p-3">
+
+            <div class="text-center">
+                <h1 class="display-4">Login</h1>
+            </div>
+            @*passa para o url action nome do metodo criado e nome do controller*@
+            <form asp-controller="Login" asp-action="Entrar" method="post">
+                <div class="col mb-3">
+                    <label for="login" class="form-label">Login</label>
+                    <input type="text" asp-for="Login" class="form-control" id="login" name="Login" />
+                    @Html.ValidationMessageFor(x=>x.Login)
+                    <div id="text" class="form-text"></div>
+                </div>
+                <div class="col mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" asp-for="Senha" class="form-control" id="senha" name="Senha" />
+                    @Html.ValidationMessageFor(x=>x.Senha)
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                @*<a class="btn btn-danger" href="@Url.Action("CadastrarCliente","CadastrarCliente")">Cadastrar</a>*@
+                <a class="btn btn-danger" asp-controller="CadastrarCliente" asp-action="CadastrarCliente">Cadastrar</a>
+                @*    <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Voltar</a>*@
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </form>
+
+    </div>
+  </div>
 </div>
-@*passa para o url action nome do metodo criado e nome do controller*@
-<form asp-controller="Login" asp-action="Entrar" method="post">
-    <div class="mb-3">
-        <label for="exampletext" class="form-label">Nome</label>
-        <input type="text" class="form-control" name="Nome">
-        <div id="text" class="form-text"></div>
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputpassword" class="form-label">Senha</label>
-        <input type="password" class="form-control" name="Senha">
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-    @*<a class="btn btn-danger" href="@Url.Action("CadastrarCliente","CadastrarCliente")">Cadastrar</a>*@
-    <a class="btn btn-danger" asp-controller="CadastrarCliente" asp-action="CadastrarCliente">Cadastrar</a>
-@*    <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Voltar</a>*@
-</form>

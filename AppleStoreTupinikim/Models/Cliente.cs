@@ -5,18 +5,11 @@ namespace AppleStoreTupinikim.Models
 {
     public class Cliente
     {
-        //[Display(Name = "IdCliente")]
-        //public string IdCliente { get; set; }
-        [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Preenchimento obrigatorio")]
-        [DataType(DataType.Text, ErrorMessage = "O Campo está Vazio")]
-        //[Display(Name = "Nome")]
-        //[Required(ErrorMessage = "Preenchimento obrigatorio")]
-        //[DataType(DataType.Text, ErrorMessage = "O Campo está Vazio")]
-        public string Nome { get; set; }
+        [Display(Name = "Login")]
+        [Required(ErrorMessage = "O campo Login é obrigatório.")]
+        public string Login { get; set; }
         [Display(Name = "Senha")]
-        [Required(ErrorMessage = "Preenchimento obrigatorio")]
-        [DataType(DataType.Text, ErrorMessage = "O Campo está Vazio")]
+        [Required(ErrorMessage = "O campo Senha é obrigatório.")]
         public string Senha { get; set; }
 
     }
