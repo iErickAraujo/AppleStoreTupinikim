@@ -37,7 +37,7 @@
                     <td>@item.Estoque</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <a class="btn btn-warning btn-sm me-3" href="@Url.Action("EditarProduto","EditarProduto")">Editar</a>
+                            <a class="btn btn-warning btn-sm me-3" href="@Url.Action("EditarProduto","EditarProduto",new{idproduto=item.IdProduto})">Editar</a>
                             <a class="btn btn-danger btn-sm" href="@Url.Action("ExcluirProduto","ExcluirProduto")">Excluir</a>
                         </div>
                     </td>
