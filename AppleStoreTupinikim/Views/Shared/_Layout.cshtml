@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AppleStoreTupinikim.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Orbitron&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom mb-3 navsombra rounded-bottom">
             <div class="container-fluid">
                 <img src="https://cdn.pixabay.com/photo/2017/01/11/08/31/icon-1971130_1280.png" class="img-fluid" style="width: 36px; height: 36px;" />
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AppleStoreTupinikim</a>
+                <a class="navbar-brand lk" asp-area="" asp-controller="Home" asp-action="Index">AppleStoreTupinikim</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,19 +23,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                            <a class="nav-link text-dark n-link" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CadastrarProduto" asp-action="CadastrarProduto">Cadastrar Produtos</a>
+                            <a class="nav-link text-dark n-link" asp-area="" asp-controller="CadastrarProduto" asp-action="CadastrarProduto">Cadastrar Produtos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ListaDeProdutos" asp-action="ListaDeProdutos">Lista de Produtos</a>
+                            <a class="nav-link text-dark n-link" asp-area="" asp-controller="ListaDeProdutos" asp-action="ListaDeProdutos">Lista de Produtos</a>
                         </li>
                         @*                        <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="CadastrarCliente" asp-action="CadastrarCliente">CadastrarClientes</a>
                         </li>*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+                            <a class="nav-link text-dark n-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
                         </li>
                     </ul>
                 </div>
@@ -46,11 +48,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted rounded-top mt-5">
         <div class="container">
             <div class="row">
-                <div class="col text-center">
-                    GEF - &copy; 2023 - AppleStoreTupinikim - <a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
+                <div class="col text-center lk">
+                    GEF - &copy; 2023 - AppleStoreTupinikim - <a class="text-decoration-none text-reset" asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a>
                 </div>
             </div>
         </div>

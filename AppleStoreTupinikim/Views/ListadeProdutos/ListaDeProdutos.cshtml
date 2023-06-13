@@ -6,24 +6,24 @@
     ViewData["Title"] = "Lista De Produtos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="text-center mt-5">
+<div class="text-center mt-5 border rounded sombra mb-5 borda">
     <h1 class="display-4">Lista De Produtos</h1>
-    <div class="panel-body">
+    <div class="panel-body mb-3">
         @* dentro do url action nome do metodo e do controlador*@
-        <a class="btn btn-success" href="@Url.Action("CadastrarProduto","CadastrarProduto")">Cadastrar</a>
+        <a class="btn btn-success me-4" href="@Url.Action("CadastrarProduto","CadastrarProduto")">Cadastrar</a>
         <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Voltar</a>
         <br />
     </div>
     <div class="table-responsive">
-        <table class="table">
+        <table class="table fundo borda">
             <thead>
                 <tr>
                     @*<th scope="col" type="hidden">#IdProduto</th>*@
-                    <th scope="col">Nome</th>
-                    <th scope="col">Valor (R$)</th>
-                    <th scope="col">Em estoque</th>
+                    <th class="lk" scope="col">Nome</th>
+                    <th class="lk" scope="col">Valor (R$)</th>
+                    <th class="lk" scope="col">Em estoque</th>
                     @*<th scope="col" style="width:150px">Ações</th>*@
-                    <th scope="col">Ações</th>
+                    <th class="lk" scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
