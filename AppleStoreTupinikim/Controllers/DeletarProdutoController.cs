@@ -34,13 +34,17 @@ namespace AppleStoreTupinikim.Controllers
         }
         //
         //Deletar produto
-        [HttpDelete]
         public IActionResult DeletarProduto(string idproduto)
         {
             //
             FirebaseResponse response = cliente.Delete("Produtos/" + idproduto);
 
-            return View();
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                //retorna para a view lista de produtos
+                return RedirectToAction("ListaDeProdutos", "ListaDeProdutos");
+            }
+            else { return View(); }
         }
     }
 }

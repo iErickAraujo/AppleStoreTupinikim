@@ -14,12 +14,13 @@
     <div class="panel-body">
         @* dentro do url action nome do metodo e do controlador*@
         <a class="btn btn-success" href="@Url.Action("CadastrarProduto","CadastrarProduto")">Cadastrar Produto</a>
+        <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Voltar</a>
         <br />
     </div>
     <table class="table">
         <thead>
             <tr>
-                @*<th scope="col">#IdProduto</th>*@
+                @*<th scope="col" type="hidden">#IdProduto</th>*@
                 <th scope="col">Nome Produto</th>
                 <th scope="col">Valor (R$)</th>
                 <th scope="col">Em estoque</th>
@@ -31,14 +32,14 @@
             @foreach (var item in Model)
             {
                <tr>
-                    @*<td>@item.IdProduto</td>*@
-                   <td>@item.Nome</td>
+                    @*<td type="hidden">@item.IdProduto</td>*@
+                    <td>@item.Nome</td>
                     <td>@item.Valor</td>
                     <td>@item.Estoque</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <a class="btn btn-warning btn-sm me-3" href="@Url.Action("EditarProduto","EditarProduto",new{idproduto=item.IdProduto})">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="@Url.Action("ExcluirProduto","ExcluirProduto",new{idproduto=item.IdProduto})">Excluir</a>
+                            <a class="btn btn-danger btn-sm" href="@Url.Action("DeletarProduto","DeletarProduto",new{idproduto=item.IdProduto})">Excluir</a>
                         </div>
                     </td>
                </tr>

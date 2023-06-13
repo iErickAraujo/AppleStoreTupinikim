@@ -30,6 +30,14 @@ namespace AppleStoreTupinikim.Controllers
             cliente = new FirebaseClient(config);
 
         }
+        //deletar
+        public IActionResult DeletarProduto(string idproduto)
+        {
+            //
+            FirebaseResponse response = cliente.Delete("Produtos/" + idproduto);
+
+            return View();
+        }
         //Get produto
         public IActionResult Inicio()
         {
