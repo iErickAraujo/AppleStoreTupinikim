@@ -12,18 +12,18 @@
 <form action="@Url.Action("CadastrarProduto","CadastrarProduto")" method="post">
     <div class="mb-3">
         <label for="exampletext" class="form-label">Nome Do Produto</label>
-        <input type="text" class="form-control" name="Nome">
+        <input type="text" class="form-control" name="Nome" required>
         <div id="text" class="form-text"></div>
     </div>
     <label for="exampletext" class="form-label">Valor do Produto</label>
     <div class="input-group mb-3" >
-        <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Valor">
+        <span class="input-group-text">R$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="Valor" required>
         <span class="input-group-text">.00</span>
     </div>
     <div class="mb-3">
         <label for="exampleInputnumber" class="form-label">Quantidade em Estoque</label>
-        <input type="number" class="form-control" name="Estoque">
+        <input type="number" class="form-control" name="Estoque" required>
     </div>
   
     <button type="submit" class="btn btn-primary">Cadastrar</button>
