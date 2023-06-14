@@ -15,15 +15,16 @@
             @*passa para o url action nome do metodo criado e nome do controller*@
             <form action="@Url.Action("CadastrarCliente","CadastrarCliente")" method="post">
                 <div class="mb-3">
-                    <label for="exampletext" class="form-label">Nome</label>
-                    <input type="text" class="form-control" name="Nome" required>
+                    <label for="exampleLogin" class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="Login" required/>
                     <div id="text" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputpassword" class="form-label">Senha</label>
-                    <input type="password" class="form-control" name="Senha" required>
+                    <input type="password" class="form-control" name="Senha" required/>
                 </div>
-                <a class="btn btn-primary" asp-controller="Login" asp-action="Login">Cadastrar</a>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                @*<a type="submit" class="btn btn-primary" asp-controller="Login" asp-action="Login">Cadastrar</a>*@
                 <a class="btn btn-danger" asp-controller="Login" asp-action="Login">Voltar</a>
             </form>
 
